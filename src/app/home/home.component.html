@@ -1,0 +1,58 @@
+<!-- <div class="container-fluid">
+  <div class="row sticky-top" style="height: 55px">
+    <div class="col d-flex align-items-center">
+      <fa-icon [icon]="faAirFreshener" style="font-size: 28px; margin-right: 8px"></fa-icon>
+      Orange App
+    </div>
+    <div class="col d-flex justify-content-end align-items-center">
+      <a class="btn btn-outline-light mr-1" routerLink="/home/">Personal</a>
+      <a class="btn btn-outline-light mr-1" routerLink="/home/education">
+        Education
+      </a>
+      <a class="btn btn-outline-light mr-1" routerLink="/home/contact-us">
+        {{sessId}}
+      </a>
+
+      <button class="btn btn-outline-light mr-1" (click)="processLogout()">
+        Log Out
+      </button>
+    </div>
+  </div> -->
+<!-- navbar -->
+<div class="container-fluid">
+  <div class="row sticky-top form-inline"
+    style="display: flex;height: 60px; background-color: rgb(32, 31, 31);justify-content: space-between;">
+    <!-- logo -->
+    <div class="col-2">
+      <a routerLink="/home">
+        <img src="assets/IMDB_Logo_2016.jpg" width="140" height="44">
+      </a>
+    </div>
+
+    <!-- sign in button -->
+    <div class="col-4" style="display: flex; justify-content: center;">
+      <a class="btn btn-outline-warning mr-1" routerLink="/home/education">About Us</a>
+      <a class="btn btn-outline-warning mr-1" routerLink="/home/contact-us">
+        {{sessId}}
+      </a>
+      <button class="btn btn-outline-warning mr-1" (click)="processLogout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+
+
+  <router-outlet></router-outlet>
+  <!-- <div class="row bg-dark footer" style="height: 175px;display: flex; justify-content: center;">
+    <div class="col-10 margin-top: 15px;">
+      <div class="row" style="height: 10%;"></div>
+      <div class="row" style="height: 30%;display: flex;justify-content: center;padding:15px">
+        <h4 style="color:whitesmoke;"> A Project by Team 6</h4>
+      </div>
+      <div class="row" style="height: 30%;display: flex;justify-content: center; padding: 15px;">
+        <p style="color:whitesmoke;"> CDAC JUHU FEB 2020</p>
+      </div>
+
+    </div>
+  </div> -->
+</div>

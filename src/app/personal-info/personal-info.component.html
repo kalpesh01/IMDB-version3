@@ -1,0 +1,156 @@
+<div class="container-fluid" style="background-color: black;">
+  <div class="row  d-flex justify-content-center mb-5" style="height: 100vh;">
+    <div class="col-10 d-flex justify-content-center" style="height: 100%;">
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide style="height: 60%; width: 100%;">
+          <div class="picsum-img-wrapper d-flex justify-content-center" style="max-height: 100%; max-width: 100%;">
+            <img [src]="images[0]" alt="Random first slide" style="height: 100%; width: 100%;">
+          </div>
+          <div class="carousel-caption">
+            <h3>10 seconds between slides...</h3>
+            <p>This carousel uses customized default values.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide style="height: 60%; width: 100%;">
+          <div class="picsum-img-wrapper d-flex justify-content-center" style="max-height: 100%; max-width: 100%;">
+            <img [src]="images[1]" alt="Random second slide" style="height: 60%; width: 100%;">
+          </div>
+          <div class="carousel-caption">
+            <h3>No mouse events...</h3>
+            <p>This carousel doesn't pause or resume on mouse events</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide style="height: 60%; width: 100%;">
+          <div class="picsum-img-wrapper d-flex justify-content-center" style="max-height: 100%; max-width: 100%;">
+            <img [src]="images[2]" alt="Random third slide" style="height: 60%; width: 100%;">
+          </div>
+          <div class="carousel-caption">
+            <h3>No keyboard...</h3>
+            <p>This carousel uses customized default values.</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide style="height: 60%; width: 100%;">
+          <div class="picsum-img-wrapper d-flex justify-content-center" style="max-height: 100%; max-width: 100%;">
+            <img [src]="images[3]" alt="Random fourth slide" style="height: 60%; width: 100%;">
+          </div>
+          <div class="carousel-caption">
+            <h3>And no wrap after last slide.</h3>
+            <p>This carousel uses customized default values.</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <ng-container *ngFor="let item of list" class="mt-5">
+      <div class="col-3 my-3 ml-5 p-3" *ngIf="item.show">
+
+
+        <div class="row" style="height: 70%;" (click)=contentPage(item.title)>
+          <img [src]="item.img" class="border border-white "
+            style="padding: 2px; width: 100%; max-height: 100%;border-radius: 5px;">
+        </div>
+
+        <div class="row" style="height: 10%;display: flex; align-items: center;">
+          <div style="color: whitesmoke;font-size:22px;font:bold;padding-left: 10px;"> {{ item.rating }}</div>
+        </div>
+
+        <div class="row" style="height: 10%;display: flex; align-items: center;">
+          <a routerLink="">
+            <div style="color: whitesmoke;font-size:22px;font:bold;padding-left: 10px;"> {{ item.title }}</div>
+          </a>
+        </div>
+        <div class="row" style="height: 10%;display: flex; align-items: center;">
+          <a href="https://www.youtube.com/watch?v=uxjNDE2fMjI">
+            <div style="color: whitesmoke;font-size:22px;font:bold;padding-left: 10px;"> Trailer</div>
+          </a>
+        </div>
+
+
+
+        <!-- <h5>{{ item.title }}</h5>
+
+
+        <div (click)="contentPage(item.title)">
+
+          <img [src]="item.img" alt="" style="height: 100%; width: 100%; object-fit: cover" />
+        </div>
+
+        <div>
+          <div></div>
+        </div> -->
+        <!-- <button class="btn btn-outline-secondary" (click)="showDetailsModal(item)">
+          Show Details
+        </button> -->
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+
+<!-- content box -->
+<!-- <div class="row" style="display: flex;height: 625px; margin-top: 45px;margin-bottom: 10px">
+    <h3 style="color: goldenrod; padding-top: 12px;padding-left: 10px;">Explore Ratings & Reviews</h3>
+    <ng-container *ngFor="let item of list">
+      <div class="col-4 my-3" *ngIf="item.show" style="background-color: rgb(32, 31, 31);">
+     
+        <div class="row" style="height: 70%;">
+          <img [src]="item.img" class="col-3" style="padding: 2px; width: 100%; max-height: 100%;border-radius: 5px;">
+        </div>
+
+        <div class="row" style="height: 10%;display: flex; align-items: center;">
+          <div style="color: whitesmoke;font-size:22px;font:bold;padding-left: 10px;"> {{ item.rating }}</div>
+        </div>
+
+        <div class="row" style="height: 10%;display: flex; align-items: center;">
+          <a routerLink="">
+            <div style="color: whitesmoke;font-size:22px;font:bold;padding-left: 10px;"> {{ item.title }}</div>
+          </a>
+        </div>
+        <div class="row" style="height: 10%;display: flex; align-items: center;">
+          <a href="https://www.youtube.com/watch?v=uxjNDE2fMjI">
+            <div style="color: whitesmoke;font-size:22px;font:bold;padding-left: 10px;"> Trailer</div>
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div> -->
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of list">
+        <div class="col-4 my-3" *ngIf="item.show">
+          <h5>{{ item.title }}</h5>
+
+
+          <div (click)="contentPage(item.title)">
+
+            <img [src]="item.img" alt="" style="height: 100%; width: 100%; object-fit: cover" />
+          </div>
+
+          <button class="btn btn-outline-secondary" (click)="showDetailsModal(item)">
+            Show Details
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div> -->
+
+<!-- rating box -->
+<!-- <div class="row d-flex justify-content-center mt-5">
+    <div class="col-6 bg-white shadow rounded">
+      <ngb-rating [(rate)]="currentRate" (blur)="myfun()"></ngb-rating>
+      <hr>
+      <pre>Rate: <b>{{currentRate}}</b></pre>
+    </div>
+  </div> -->
+
+
+<!-- </div> -->

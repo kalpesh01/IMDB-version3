@@ -1,0 +1,31 @@
+.background{
+    background-image: url("login_back.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.formblock{
+    width: 100%;
+    padding-left: 50px; 
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.title{
+    width: 100%;
+    padding-top: 22px;
+    padding-bottom: 18px;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.btncss{
+    width:60%;
+    height: 13%;
+    margin-left: 90px;
+    margin-right: 50px; 
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+
+}

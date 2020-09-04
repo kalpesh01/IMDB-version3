@@ -1,0 +1,55 @@
+<!-- forget Password Page -->
+
+
+
+<div class="container-fluid background ">
+    <div class="row" style="height: 100vh">
+        <!-- Left Block -->
+        <div class="col  d-flex flex-column justify-content-center align-items-center">
+            <div class=" d-flex flex-column">
+                <h2 style="color:rgb(24, 23, 22)">Back To Login Page?</h2>
+
+
+                <a routerLink="/login" type="button" class="btn btn-primary">Login Here</a>
+            </div>
+        </div>
+        <!--sirancha code 
+        
+        <div>
+          <fa-icon [icon]="faAirFreshener" style="font-size: 54px"></fa-icon>
+        </div>
+        <div class="h3">Welcome to my Appplication</div>
+        <div class="h6">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid,
+          harum!
+        </div>
+      </div> -->
+
+        <!-- Right Block-->
+        <div class="col-12 col-md-6  d-flex flex-column justify-content-center align-items-center"
+            [formGroup]="fbFormGroup">
+            <div class="row d-flex flex-column bg-white shadow " style="width: 60%; height: 400px;padding: 15px;">
+
+                <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+                    Enter Valid Email Id
+                </div>
+
+                <div class="h4 d-flex justify-content-center title">Reset Password</div>
+
+                <div class="formblock">
+                    <input type="text" placeholder="Enter email" class="form-control" formControlName="email" />
+                </div>
+
+                <div class="formblock">
+                    <input type="password" placeholder="Enter New Password" class="form-control"
+                        formControlName="newpassword" />
+                </div>
+
+                <button class="btn btn-primary btncss" [disabled]="!fbFormGroup.valid" (click)="forgetProcessHere()">
+                    Submit
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

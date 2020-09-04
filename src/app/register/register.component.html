@@ -1,0 +1,63 @@
+<div class="container-fluid background">
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+      <div class=" d-flex flex-column">
+        <h2 style="color:rgb(24, 23, 22)">Back To Login Page?</h2>
+
+
+        <a routerLink="/login" type="button" class="btn btn-primary">Login Here</a>
+      </div>
+    </div>
+
+
+    <!-- id name password email birtdate mobno -->
+
+
+    <!-- Right Block-->
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center" [formGroup]="fbFormGroup">
+      <div class="row bg-info d-flex flex-column bg-white shadow mt-3" style="width: 75%; height: 85%;padding: 15px;">
+        <div class="alert alert-danger " role="alert" *ngIf="uiInvalidCredential">
+          Invalid Inputs!
+        </div>
+
+        <div class="h4 d-flex justify-content-center title"> Register User</div>
+
+        <div class="formblock">
+          <input type="text" placeholder="User id" class="form-control" formControlName="id" />
+        </div>
+
+        <div class="formblock">
+          <input type="text" placeholder="Enter Username" class="form-control" formControlName="name" />
+        </div>
+
+        <div class="formblock">
+          <input type="password" placeholder="Enter Password" class="form-control" formControlName="password" />
+        </div>
+
+        <div class="formblock">
+          <input type="email" placeholder="Enter Email" (blur)="checkEmail()" class="form-control"
+            formControlName="email" />
+          <div class="" role="alert" *ngIf="isValidEmail" style="color: red;">
+            Email Alredy Exist
+          </div>
+        </div>
+
+        <div class="formblock">
+          <input type="text" placeholder="yyyy-mm-dd" class="form-control" formControlName="birthdate" />
+        </div>
+
+        <div class="formblock">
+          <input type="text" placeholder="Enter Mobile" class="form-control" formControlName="mobile" />
+        </div>
+
+        <button class="btn btn-sm btn-warning btncss" [disabled]="!fbFormGroup.valid" (click)="registerHere()">
+          Register Here
+        </button>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
