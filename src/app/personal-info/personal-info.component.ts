@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DetailsModalComponent } from '../details-modal/details-modal.component';
 import { Router } from '@angular/router';
 import { concat } from 'rxjs';
+import { DataserviceService } from '../service/dataservice.service';
 
 @Component({
   selector: 'app-personal-info',
@@ -19,8 +20,9 @@ export class PersonalInfoComponent implements OnInit {
     { title: 'Tenet', show: true, img: 'assets/twilight_small.jpg', rating: '2' },
     { title: 'Twilight 2', show: true, img: 'assets/twilight2_small.jpg', rating: '3' },
     { title: 'Twilight 3', show: true, img: 'assets/twilight2_small.jpg', rating: '4' },
-
   ];
+
+
 
   // list = [
   //   { title: 'Nodejs', show: true, img: 'assets/me.jpg' },
@@ -31,9 +33,13 @@ export class PersonalInfoComponent implements OnInit {
   //   { title: 'bootstrap', show: true, img: 'assets/me.jpg' },
   // ];
 
-  constructor(private modalService: NgbModal, private router: Router) { }
+  constructor(private modalService: NgbModal,
+    private router: Router,
+    private sharedata: DataserviceService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.sharedata.sendData(this.list);
+  }
 
   myfun() {
     console.log("hello rating function" + this.currentRate);
@@ -53,6 +59,7 @@ export class PersonalInfoComponent implements OnInit {
   contentPage(title) {
     // console.log(title);
     let temp = '/home/' + title;
+
     this.router.navigate([temp]);
   }
 }

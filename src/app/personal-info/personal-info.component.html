@@ -1,5 +1,5 @@
 <div class="container-fluid" style="background-color: black;">
-  <div class="row  d-flex justify-content-center mb-5" style="height: 100vh;">
+  <div class="row  d-flex justify-content-center mb-5" style="height:130vh;">
     <div class="col-10 d-flex justify-content-center" style="height: 100%;">
       <ngb-carousel *ngIf="images">
         <ng-template ngbSlide style="height: 60%; width: 100%;">
@@ -43,7 +43,7 @@
   </div>
 
 
-  <div class="row mt-3">
+  <div class="row d-flex justify-content-center mt-3">
     <ng-container *ngFor="let item of list" class="mt-5">
       <div class="col-3 my-3 ml-5 p-3" *ngIf="item.show">
 

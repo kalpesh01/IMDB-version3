@@ -1,9 +1,101 @@
-<h1>saheb he tenet ch page ahe tumhi yachat designing kara</h1>
+<div class="container-fluid p-0 m-0" style="background-color: black;">
+    <div class="row d-flex justify-content-center">
+        <div class="col-8 bg-gray mt-4 p-3" style="height: 600px;">
+            <img [src]="list[0].img" class="border border-white "
+                style="padding: 2px; width: 100%; max-height: 100%;border-radius: 5px;">
+        </div>
+    </div>
 
-<p> saglyat var adhi var poster taka </p>
-<p> poster chya khali information taka movie chi</p>
-<p>ajun kas ky use karaych ahe te bagha tas tumchya pramane</p>
+    <div class="row d-flex  justify-content-center mt-3 ">
+        <div class="col-8  mb-3" style="height: 300px;background-color: rgb(32, 31, 31);">
+            <div class="row d-flex justify-content-between">
+                <div class="col-5 "
+                    style="font-family: Arial, Helvetica, sans-serif;font-size: 50px;margin-left: 15px;font-weight: bold;color: whitesmoke;">
+                    {{list[0].title}}</div>
 
-<p>fkt sagl zal ki khali rating cha box takaycha ahe mala</p>
-<p>rating chya Box nantr mi khali comment box takel</p>
-<p>comment Box Nantr comments display karacya ahet saglya</p>
+                <div class="col-6  d-flex justify-content-end align-items-center"
+                    style="font-family: Arial, Helvetica, sans-serif;font-size: 25px;font-weight: bold;color: whitesmoke;">
+                    Rating :<span style="margin-left: 5px;margin-right: 5px;">{{AvgRating}}</span>
+                    <span class="bg-silver" style="color: goldenrod; ">
+                        <fa-icon [icon]="star" style="font-size: 30px"></fa-icon>
+                    </span>
+                </div>
+            </div>
+            <!-- class="fa fa-star checked" -->
+            <div class="row ">
+                <div class="col-12" style="font-weight: bold; font-size: 15px;color: white;">
+                    Description :
+                </div>
+                <div class="col-12" style="color: white;">
+                    Armed with only one word--Tenet--and fighting for the survival of the entire world, the Protagonist
+                    journeys through a twilight world of international espionage on a mission that will unfold in
+                    something beyond real time
+                </div>
+
+                <div class="col-12 mt-2" style="color: white;">
+                    <span style="font-weight: bold;font-size: 15px;"> Genre:</span> Action & Adventure,
+                    Drama, Mystery & Suspense, Science Fiction & Fantasy
+                </div>
+
+                <div class="col-12 mt-2" style="color: white;">
+                    <span style="font-weight: bold;font-size: 15px;"> Directed By:</span> Christopher Nolan
+                </div>
+                <div class="col-12 mt-2" style="color: white;">
+                    <span style="font-weight: bold;font-size: 15px;"> In Theaters:</span>Sep 3, 2020
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row d-flex justify-content-center mb-4">
+        <div class="col-8  d-flex flex-column justify-content-center" style="height: 80px;margin-bottom: 20px;">
+            <div class="row d-flex justify-content-center mt-5">
+                <div class="col-12 bg-white shadow rounded mb-3">
+                    <ngb-rating [(rate)]="currentRate" style="font-size: 30px;color: goldenrod;" (blur)="ratingfun()">
+                    </ngb-rating>
+                    <hr>
+                    <pre>Rate: <b>{{currentRate}}</b></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row  d-flex justify-content-center">
+        <div class="col-8 bg-warning d-flex flex-column justify-content-center"
+            style="height: 150px;margin-bottom: 10px;">
+
+            <span class="row" style="margin-bottom: 20px;margin-left: 20px;font-weight: bold;font-size: 20px;">Comment
+                Here </span>
+            <div class="row">
+                <div class="col-8 d-flex align-items-center"><input type="text" #cmt class="form-control"></div>
+                <div class="col-3 d-flex justify-content-end align-items-center "><button class="btn btn-dark btn-block"
+                        (click)="commentHere(cmt)">Comment</button></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row  d-flex justify-content-center" *ngFor="let item of comments">
+        <div class="col-8 bg-warning border border-white d-flex flex-column "
+            style="height: 100px;margin-bottom: 10px;">
+            <div class="row d-flex flex-column">
+                <!-- <span>{{comments[0].uid}}</span> -->
+                <span style="font-weight: bold;
+                    font-size: 20px;
+                    margin-left: 20px;
+                    margin-top: 15px;
+                    color: black;">{{item.uid}}</span>
+
+                <span style="font-family: Georgia;
+                         margin-left: 20px;
+                        margin-top: 15px;
+                        margin-bottom: 15px;
+                        color: black;">{{item.comments}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

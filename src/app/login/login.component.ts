@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
   public uiInvalidCredential = false;
 
   public fbFormGroup = this.fb.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required],
+    email: ['', [Validators.required, Validators.pattern(/([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})/)]],
+    password: ['', [Validators.required, Validators.min(3), Validators.max(15)]],
   });
 
   constructor(
